@@ -60,7 +60,12 @@ const getMovieById = async (movieId) => {
     const movie = await db.oneOrNone('SELECT * FROM movies WHERE id = $1 LIMIT 1', movieId);
     console.log(movie);
     return movie;
-
 }
 
-module.exports = { loadDataBase, getMovieById }; 
+
+const getAllMovies = async () => {
+    const movies = await db.any('SELECT * FROM movies');
+    return movies;
+}
+
+module.exports = { loadDataBase, getMovieById, getAllMovies }; 

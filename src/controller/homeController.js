@@ -3,9 +3,10 @@ const path = require('path');
 require('dotenv')
 const fs = require('fs')
 const DB = JSON.parse(fs.readFileSync(path.join(__dirname, `./../../data/${process.env.JSON_FILE}`)))
-const { loadDataBase, getMovieById } = require('./../services/queryDB.js')
+const { loadDataBase, getMovieById, getAllMovies } = require('./../services/queryDB.js')
 const { renderTopRating, renderTopBoxOffice } = require('./../services/homePageServices.js')
-
+const { getMoviesBySearch, renderSearchPage, renderPagination } = require('../services/searchPageServices.js');
+const { json } = require('express');
 const getHomePage = async (req, res) => {
     await loadDataBase(DB);
     let topRatingContent = renderTopRating(DB);
@@ -33,4 +34,21 @@ const getDetailPage = async (req, res) => {
         }
     });
 }
-module.exports = { getHomePage, getDetailPage };
+const postSearchPage = async (req, res) => {
+
+    const page = req.params.page;
+    const searchValueString = req.body;
+    const movies = await getAllMovies();
+    console.log(searchValueString.searchValue);
+    const searchMovies = getMoviesBySearch(movies, searchValueString.searchValue);
+    const paginationContent = renderPagination(Math.ceil(searchMovies.length / 8), parseInt(page), searchMovies);
+    return res.render('search.html', {
+        view: "search",
+        params: {
+            searchResult: searchMovies,
+            pagination: paginationContent
+
+        }
+    });
+}
+module.exports = { getHomePage, getDetailPage, postSearchPage };
