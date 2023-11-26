@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IA3</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <style>
+    body {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+  <body>
+    <!-- HEADER -->
+    <header
+      class="mt-2 d-flex justify-content-between align-items-center p-3 border border-danger border-2 rounded"
+      style="background-color: lightsalmon"
+    >
+      <div class="h5">21127615</div>
+      <div class="h1">Movie information</div>
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDefault"
+        />
+        <div class="fa-solid fa-sun"></div>
+        <div class="fa-solid fa-moon" style="display: none; color: white"></div>
+      </div>
+    </header>
+
+    <!-- MAVIGATION-BAR -->
+    <nav
+      class="mt-2 d-flex justify-content-between align-items-center px-3 py-2 border border-dark rounded"
+      style="background-color: silver"
+    >
+      <!-- <div class="fa-solid fa-house"></div> -->
+      <a
+        href="/"
+        class="fa-solid fa-house"
+        style="text-decoration: none; color: inherit"
+      ></a>
+      <div class="h5">21615</div>
+      <form class="row row-cols-lg-auto g-2 align-items-center">
+        <div class="col-12">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              id="inlineFormInputGroupUsername"
+              placeholder="Search"
+            />
+          </div>
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </form>
+    </nav>
+
+    <div class="card" style="width: 18rem; margin: 20px auto">
+      <img src="21615{movieImage}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center">
+          21615{movieFullTitle}
+        </h5>
+        <p class="card-text">21615{moviePlot}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" style="text-align: center">
+          Year: 21615{movieYear}
+        </li>
+        <li class="list-group-item" style="text-align: center">
+          imDb rating score: 21615{movieImDbRating}
+        </li>
+      </ul>
+    </div>
+
+    <!-- FOOTER -->
+    <footer
+      class="my-2 px-3 py-2 border border-dark rounded"
+      style="background-color: silver"
+    >
+      21127615
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/darkMode.js"></script>
+  </body>
+</html>
